@@ -20,8 +20,8 @@ public class UsuarioController {
     }
 
     @PostMapping(path = "/api/usuario/salvar")
-    public UsuarioModel salvar(@RequestBody UsuarioModel id) {
-        return repository.save(id);
+    public UsuarioModel salvar(@RequestBody UsuarioModel usuario) {
+        return repository.save(usuario);
     }
 
 }
