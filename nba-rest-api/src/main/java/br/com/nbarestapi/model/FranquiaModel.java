@@ -17,7 +17,7 @@ public class FranquiaModel {
 
     //@OneToOne(cascade = CascadeType.ALL)
     @ManyToOne
-    @JoinColumn(name = "conferencia_id")
+    @JoinColumn(name = "conferencia_id",referencedColumnName = "id")
     public ConferenciaModel conferencia;
 
     public Integer getId() {

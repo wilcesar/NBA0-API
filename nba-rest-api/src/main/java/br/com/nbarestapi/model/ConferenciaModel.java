@@ -1,7 +1,9 @@
 package br.com.nbarestapi.model;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Entity(name = "conferencias")
 public class ConferenciaModel {
@@ -13,10 +15,6 @@ public class ConferenciaModel {
 
     @Column(name = "nome", nullable = false, length = 20)
     public String nome;
-
-    @OneToMany
-    @JoinColumn(name = "conferencia_id")
-    private List<FranquiaModel> franquias;
 
     public Integer getId() {
         return id;
@@ -32,14 +30,6 @@ public class ConferenciaModel {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public List<FranquiaModel> getFranquias() {
-        return franquias;
-    }
-
-    public void setFranquias(List<FranquiaModel> franquias) {
-        this.franquias = franquias;
     }
 
 }
