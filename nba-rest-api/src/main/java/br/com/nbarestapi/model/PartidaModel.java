@@ -23,6 +23,18 @@ public class PartidaModel {
     @Column(name = "visitante_placar")
     public Integer visitantePlacar;
 
+    @OneToOne
+    @JoinColumn(name = "ganhador_id",referencedColumnName = "id")
+    public FranquiaModel ganhador;
+
+    public FranquiaModel getGanhador() {
+        return ganhador;
+    }
+
+    public void setGanhador(FranquiaModel ganhador) {
+        this.ganhador = ganhador;
+    }
+
     public Integer getId() {
         return id;
     }
